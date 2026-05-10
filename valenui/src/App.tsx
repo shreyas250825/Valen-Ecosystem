@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+
 import { Routes, Route } from 'react-router-dom';
 
 import { Navbar }                 from './components/ui/Navbar';
@@ -12,28 +12,6 @@ import { BetaSection }            from './components/sections/BetaSection';
 import ContactSection              from './components/sections/ContactSection';
 import { Footer }                 from './components/sections/Footer';
 import { Admin }                  from './pages/Admin';
-
-/* ─── Theme hook ─────────────────────────────────────────────────────────── */
-function useTheme() {
-  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
-    const stored = localStorage.getItem('vl-theme');
-    if (stored === 'dark' || stored === 'light') return stored;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  });
-
-  useEffect(() => {
-    const root = document.documentElement;
-    if (theme === 'dark') {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
-    localStorage.setItem('vl-theme', theme);
-  }, [theme]);
-
-  const toggle = () => setTheme(t => (t === 'dark' ? 'light' : 'dark'));
-  return { theme, toggle };
-}
 
 /* ─── Grid background ────────────────────────────────────────────────────── */
 function GridBg() {
@@ -54,12 +32,13 @@ function GridBg() {
 }
 
 /* ─── Landing page ───────────────────────────────────────────────────────── */
-function LandingPage({ theme, onToggleTheme }: { theme: 'dark' | 'light'; onToggleTheme: () => void }) {
+function LandingPage() {
   return (
     <div className="relative min-h-screen bg-white dark:bg-[#0a0a09] text-gray-900 dark:text-gray-100">
       <GridBg />
 
-      <Navbar theme={theme} onToggleTheme={onToggleTheme} />
+      <Navbar />
+
 
       {/* 1 — Hero */}
       <HeroSection />
@@ -103,14 +82,9 @@ function LandingPage({ theme, onToggleTheme }: { theme: 'dark' | 'light'; onTogg
 
 /* ─── App root ───────────────────────────────────────────────────────────── */
 export default function App() {
-  const { theme, toggle } = useTheme();
-
   return (
     <Routes>
-      <Route
-        path="/"
-        element={<LandingPage theme={theme} onToggleTheme={toggle} />}
-      />
+      <Route path="/" element={<LandingPage />} />
       <Route path="/admin" element={<Admin />} />
     </Routes>
   );

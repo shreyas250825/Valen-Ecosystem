@@ -1,11 +1,6 @@
 import { useState, useEffect } from 'react';
 
-interface NavbarProps {
-  theme: 'dark' | 'light';
-  onToggleTheme: () => void;
-}
-
-export function Navbar({ theme, onToggleTheme }: NavbarProps) {
+export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -78,44 +73,9 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
             ))}
           </div>
 
-          {/* Right — theme toggle + CTA */}
           <div className="flex items-center gap-2.5 flex-shrink-0 ml-auto md:ml-0">
 
-            {/* Theme toggle */}
-            <button
-              onClick={onToggleTheme}
-              title="Toggle theme"
-              className="
-                w-[34px] h-[34px] rounded-[8px] border
-                border-gray-200 dark:border-white/[0.1]
-                flex items-center justify-center text-[15px]
-                text-gray-500 dark:text-gray-400
-                hover:bg-gray-100 dark:hover:bg-white/[0.07]
-                hover:text-gray-900 dark:hover:text-gray-100
-                transition-all duration-150 cursor-pointer bg-transparent
-              "
-            >
-              {theme === 'dark' ? '☀️' : '🌙'}
-            </button>
-
-            {/* CTA */}
-            <a
-              href="https://valen.live"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                hidden sm:inline-flex items-center gap-1
-                bg-gray-900 dark:bg-gray-100
-                text-gray-100 dark:text-gray-900
-                text-[13px] font-medium
-                px-4 py-[7px] rounded-[8px]
-                hover:opacity-80 hover:-translate-y-[1px]
-                transition-all duration-150 no-underline
-              "
-            >
-              Visit Valen.live
-              <span className="text-[11px] opacity-70">↗</span>
-            </a>
+            {/* CTA removed (per request) */}
 
             {/* Mobile hamburger */}
             <button
@@ -166,20 +126,7 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
                 {link.label}
               </button>
             ))}
-            <a
-              href="https://valen.live"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                mt-2 text-center text-[13px] font-medium
-                bg-gray-900 dark:bg-gray-100
-                text-white dark:text-gray-900
-                py-2.5 rounded-[8px] no-underline
-                hover:opacity-80 transition-all duration-150
-              "
-            >
-              Visit Valen.live ↗
-            </a>
+
           </div>
         </div>
       </nav>

@@ -1,10 +1,9 @@
-# TODO — Product Ecosystem (SECTION 3)
+# TODO
 
-- [x] Update repo understanding baseline (completed)
-- [x] Replace `PRODUCTS` data in `valenui/src/constants/data.ts` with 5 ecosystem products + statuses + CTAs
-- [x] Extend product types in `valenui/src/types/index.ts`
-- [x] Upgrade `ProductCard` UI (`valenui/src/components/ui/ProductCard.tsx`) to glassmorphism, status badge, icon/logo slot, CTA, and hover glow
-- [x] Update `ProductSection` header + layout (desktop 2-col, first card larger, mobile stacked)
-- [x] Ensure build passes: `npm run build`
+- [x] Create TODO tracker.
+- [x] Update Navbar to remove theme toggle (light/dark) and remove “Visit Valen.live” CTA links.
+- [x] Update App.tsx (and any theme wiring) to stop passing theme/toggle props to Navbar if no longer needed.
+- [x] Run TypeScript/build check to ensure there are no compile errors.
+
 
 
