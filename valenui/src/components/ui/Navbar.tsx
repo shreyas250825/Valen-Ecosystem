@@ -43,11 +43,11 @@ export function Navbar() {
             className="flex items-center gap-2.5 no-underline flex-shrink-0"
             onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
           >
-            <div className="w-7 h-7 rounded-[7px] bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center flex-shrink-0">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="white">
-                <path d="M8 1L14 4.5V11.5L8 15L2 11.5V4.5L8 1Z" />
-              </svg>
-            </div>
+            <img
+              src="/assets/Valen%20Labs%20Logo.png"
+              alt="Valen Labs"
+              className="w-7 h-7 rounded-[7px] object-contain"
+            />
             <span className="font-semibold text-[15px] tracking-[-0.02em] text-gray-900 dark:text-gray-100">
               Valen Labs
             </span>

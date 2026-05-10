@@ -1,17 +1,16 @@
-
 import { Routes, Route } from 'react-router-dom';
 
-import { Navbar }                 from './components/ui/Navbar';
-import { HeroSection }            from './components/sections/HeroSection';
+import { Navbar } from './components/ui/Navbar';
+import { HeroSection } from './components/sections/HeroSection';
 import { ScrollAnimationSection } from './components/sections/ScrollAnimationSection';
-import { ProductSection }         from './components/sections/ProductSection';
-import { VisionSection }          from './components/sections/VisionSection';
-import { FounderSection }         from './components/sections/FounderSection';
-import { RoadmapSection }         from './components/sections/RoadmapSection';
-import { BetaSection }            from './components/sections/BetaSection'; 
-import ContactSection              from './components/sections/ContactSection';
-import { Footer }                 from './components/sections/Footer';
-import { Admin }                  from './pages/Admin';
+import { ProductSection } from './components/sections/ProductSection';
+import { VisionSection } from './components/sections/VisionSection';
+import { FounderSection } from './components/sections/FounderSection';
+import { RoadmapSection } from './components/sections/RoadmapSection';
+import { BetaSection } from './components/sections/BetaSection';
+import ContactSection from './components/sections/ContactSection';
+import { Footer } from './components/sections/Footer';
+import { Admin } from './pages/Admin';
 
 /* ─── Grid background ────────────────────────────────────────────────────── */
 function GridBg() {
@@ -39,7 +38,6 @@ function LandingPage() {
 
       <Navbar />
 
-
       {/* 1 — Hero */}
       <HeroSection />
 
@@ -47,7 +45,7 @@ function LandingPage() {
       <ScrollAnimationSection />
 
       {/* 3 — Products */}
-      <ProductSection />    
+      <ProductSection />
 
       {/* 4 — Vision */}
       <div id="vision">
@@ -66,13 +64,26 @@ function LandingPage() {
 
       {/* 7 — Beta */}
       <div id="beta">
-        <BetaSection onSubmit={async () => {}} />
+        <BetaSection
+          onSubmit={async (email) => {
+            // Route to local Vercel API (/api/beta-signup)
+            const res = await fetch('/api/beta-signup', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ email, timestamp: Date.now() }),
+            });
+
+            if (!res.ok) {
+              throw new Error('Beta signup failed');
+            }
+          }}
+        />
       </div>
 
       {/* 8 — Contact */}
       <div id="contact">
         <ContactSection />
-      </div> 
+      </div>
 
       {/* 9 — Footer */}
       <Footer />
@@ -89,3 +100,4 @@ export default function App() {
     </Routes>
   );
 }
+
