@@ -19,6 +19,7 @@ export function BetaSection({ onSubmit }: BetaSectionProps) {
     }
 
     setLoading(true);
+
     try {
       await onSubmit(email);
       setSuccess(true);
@@ -39,24 +40,44 @@ export function BetaSection({ onSubmit }: BetaSectionProps) {
 
       <div className="max-w-3xl mx-auto text-center relative">
         <div className="relative p-12 md:p-16 border border-gray-800 rounded-3xl bg-gradient-to-br from-gray-900/90 to-gray-900/50 backdrop-blur-sm overflow-hidden">
-          {/* Decorative elements */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-purple to-transparent" />
           
+          {/* Decorative top border */}
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-purple to-transparent" />
+
           <div className="relative">
+            
+            {/* Badge */}
             <div className="inline-block mb-6 px-4 py-2 bg-primary-purple/10 border border-primary-purple/20 rounded-full">
-              <span className="text-sm text-primary-purple font-medium">Early Access</span>
+              <span className="text-sm text-primary-purple font-medium">
+                Coding Arena Beta
+              </span>
             </div>
 
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">
-              Beta Access Opens
+            {/* Heading */}
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white leading-tight">
+              Coding Arena
               <br />
-              <span className="text-gradient">March 18, 2026</span>
+              <span className="text-gradient">
+                Releasing May 27, 2026
+              </span>
             </h2>
-            <p className="text-gray-400 mb-10 text-lg">
-              Be among the first to experience the future of career intelligence
+
+            {/* Subtitle */}
+            <p className="text-gray-400 mb-3 text-lg">
+              Early beta access begins on{' '}
+              <span className="text-white font-medium">
+                May 25, 2026
+              </span>
             </p>
 
+            <p className="text-gray-500 mb-10 text-base">
+              Join the beta waitlist and get first access to Valen AI’s
+              competitive coding ecosystem.
+            </p>
+
+            {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
+              
               <div className="relative">
                 <input
                   type="email"
@@ -70,34 +91,63 @@ export function BetaSection({ onSubmit }: BetaSectionProps) {
                 />
               </div>
 
+              {/* Error Message */}
               {error && (
-                <div className="flex items-center gap-2 text-red-400 text-sm text-left bg-red-500/10 border border-red-500/20 rounded-lg px-4 py-3" role="alert">
-                  <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                <div
+                  className="flex items-center gap-2 text-red-400 text-sm text-left bg-red-500/10 border border-red-500/20 rounded-lg px-4 py-3"
+                  role="alert"
+                >
+                  <svg
+                    className="w-4 h-4 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                   {error}
                 </div>
               )}
 
+              {/* Success Message */}
               {success && (
-                <div className="flex items-center gap-2 text-green-400 text-sm text-left bg-green-500/10 border border-green-500/20 rounded-lg px-4 py-3" role="alert">
-                  <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                <div
+                  className="flex items-center gap-2 text-green-400 text-sm text-left bg-green-500/10 border border-green-500/20 rounded-lg px-4 py-3"
+                  role="alert"
+                >
+                  <svg
+                    className="w-4 h-4 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                   Successfully joined beta waitlist!
                 </div>
               )}
 
+              {/* Submit Button */}
               <button
                 type="submit"
                 disabled={loading}
                 className="group relative w-full px-8 py-4 bg-primary-purple rounded-xl text-white font-semibold overflow-hidden transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary-purple/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                <span className="relative z-10">{loading ? 'Joining...' : 'Join Beta Waitlist'}</span>
+                <span className="relative z-10">
+                  {loading ? 'Joining...' : 'Request Early Access'}
+                </span>
+
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-purple to-primary-blue opacity-0 group-hover:opacity-100 transition-opacity" />
               </button>
             </form>
 
+            {/* Footer */}
             <p className="mt-6 text-sm text-gray-500">
               No spam, unsubscribe anytime. We respect your privacy.
             </p>
