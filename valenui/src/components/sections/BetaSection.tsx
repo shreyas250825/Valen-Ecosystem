@@ -71,7 +71,7 @@ export function BetaSection({ onSubmit }: BetaSectionProps) {
             </p>
 
             <p className="text-gray-500 mb-10 text-base">
-              Join the beta waitlist and get first access to Valen AI’s
+              Join the beta waitlist and get first access to Valen Live’s
               competitive coding ecosystem.
             </p>
 
