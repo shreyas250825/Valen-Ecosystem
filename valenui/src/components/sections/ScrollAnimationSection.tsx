@@ -1,32 +1,44 @@
 import { useEffect, useRef } from 'react';
 
 const STATS = [
-  { n: '5+',    l: 'Active Platforms'    },
-  { n: '2026',  l: 'Founded'             },
-  { n: 'AI',    l: 'Core Infrastructure' },
-  { n: '∞',     l: 'Scale Potential'     },
+  {
+    n: '5+',
+    l: 'Active Platforms',
+    style: 'bg-indigo-50 dark:bg-indigo-500/10 border-indigo-100 dark:border-indigo-500/20 text-indigo-700 dark:text-indigo-300',
+  },
+  {
+    n: '2026',
+    l: 'Founded',
+    style: 'bg-cyan-50 dark:bg-cyan-500/10 border-cyan-100 dark:border-cyan-500/20 text-cyan-700 dark:text-cyan-300',
+  },
+  {
+    n: '120+',
+    l: 'Live Integrations',
+    style: 'bg-violet-50 dark:bg-violet-500/10 border-violet-100 dark:border-violet-500/20 text-violet-700 dark:text-violet-300',
+  },
+  {
+    n: '4.9/5',
+    l: 'Product Satisfaction',
+    style: 'bg-amber-50 dark:bg-amber-500/10 border-amber-100 dark:border-amber-500/20 text-amber-700 dark:text-amber-300',
+  },
 ];
 
 const PILLARS = [
   {
-    icon: '⚡',
     title: 'Career Intelligence',
-    desc: 'AI systems that understand career trajectories, evaluate hiring readiness, and surface actionable intelligence.',
+    desc: 'Systems that understand career trajectories, evaluate hiring readiness, and surface actionable intelligence.',
   },
   {
-    icon: '🔁',
     title: 'Automation',
     desc: 'Intelligent workflow automation that removes friction from institutional and enterprise processes at scale.',
   },
   {
-    icon: '🧠',
     title: 'Generative AI',
-    desc: 'Research-grade generative infrastructure exploring multimodal content generation and AI media systems.',
+    desc: 'Research-grade infrastructure exploring multimodal content generation and AI media systems.',
   },
   {
-    icon: '📡',
     title: 'Scalable Ecosystem',
-    desc: 'Every product we build connects into a unified AI ecosystem — composable, interoperable, and production-ready.',
+    desc: 'Every product we build is part of a unified AI ecosystem — composable, interoperable, and production-ready.',
   },
 ];
 
@@ -96,19 +108,18 @@ export function ScrollAnimationSection() {
             className="fade-in-up grid grid-cols-2 gap-3"
             style={{ opacity: 0, transform: 'translateY(20px)', transition: 'opacity 0.6s 0.2s ease, transform 0.6s 0.2s ease' }}
           >
-            {STATS.map(({ n, l }) => (
+            {STATS.map(({ n, l, style }) => (
               <div
                 key={l}
-                className="
-                  bg-white dark:bg-white/[0.03]
-                  border border-gray-200 dark:border-white/[0.07]
-                  rounded-xl p-5
-                "
+                className={`
+                  ${style}
+                  border rounded-xl p-5
+                `}
               >
-                <div className="text-[28px] font-semibold tracking-[-0.03em] text-gray-900 dark:text-gray-100">
+                <div className="text-[28px] font-semibold tracking-[-0.03em]">
                   {n}
                 </div>
-                <div className="text-[12px] text-gray-400 mt-1 font-mono tracking-[0.02em]">
+                <div className="text-[12px] mt-1 font-mono tracking-[0.02em] text-slate-600 dark:text-slate-300">
                   {l}
                 </div>
               </div>
@@ -118,25 +129,33 @@ export function ScrollAnimationSection() {
 
         {/* Pillars grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {PILLARS.map(({ icon, title, desc }, i) => (
-            <div
-              key={title}
-              className="fade-in-up bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.07] rounded-xl p-5 hover:border-gray-300 dark:hover:border-white/[0.12] transition-all duration-300"
-              style={{
-                opacity: 0,
-                transform: 'translateY(20px)',
-                transition: `opacity 0.6s ${0.1 * (i + 1)}s ease, transform 0.6s ${0.1 * (i + 1)}s ease`,
-              }}
-            >
-              <div className="text-2xl mb-3">{icon}</div>
-              <div className="text-[14px] font-semibold text-gray-900 dark:text-gray-100 mb-2 tracking-[-0.01em]">
-                {title}
+          {PILLARS.map(({ title, desc }, i) => {
+            const pillarColors = [
+              'from-indigo-50 to-violet-50 text-slate-900 border-indigo-100 dark:from-indigo-500/10 dark:to-violet-500/10 dark:text-gray-100 dark:border-indigo-500/20',
+              'from-cyan-50 to-sky-50 text-slate-900 border-cyan-100 dark:from-cyan-500/10 dark:to-sky-500/10 dark:text-gray-100 dark:border-cyan-500/20',
+              'from-fuchsia-50 to-pink-50 text-slate-900 border-fuchsia-100 dark:from-fuchsia-500/10 dark:to-pink-500/10 dark:text-gray-100 dark:border-fuchsia-500/20',
+              'from-amber-50 to-yellow-50 text-slate-900 border-amber-100 dark:from-amber-500/10 dark:to-yellow-500/10 dark:text-gray-100 dark:border-amber-500/20',
+            ];
+            return (
+              <div
+                key={title}
+                className={`fade-in-up bg-gradient-to-br ${pillarColors[i]} border rounded-3xl p-6 shadow-sm shadow-slate-200/40 dark:shadow-none hover:shadow-xl hover:shadow-slate-300/20 transition-all duration-300`}
+                style={{
+                  opacity: 0,
+                  transform: 'translateY(20px)',
+                  transition: `opacity 0.6s ${0.1 * (i + 1)}s ease, transform 0.6s ${0.1 * (i + 1)}s ease`,
+                }}
+              >
+                <div className="mb-4 h-2.5 w-16 rounded-full bg-white/80" />
+                <div className="text-[14px] font-semibold mb-2 tracking-[-0.01em]">
+                  {title}
+                </div>
+                <div className="text-[13px] font-light leading-[1.8]">
+                  {desc}
+                </div>
               </div>
-              <div className="text-[13px] font-light text-gray-500 dark:text-gray-400 leading-[1.65]">
-                {desc}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

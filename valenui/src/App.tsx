@@ -38,8 +38,10 @@ function LandingPage() {
   useEffect(() => {
     const shown = sessionStorage.getItem('valen-live-cta-shown');
     if (!shown) {
-      setShowValenPopup(true);
+      const timer = window.setTimeout(() => setShowValenPopup(true), 20000);
+      return () => window.clearTimeout(timer);
     }
+    return undefined;
   }, []);
 
   const closePopup = () => {
@@ -67,7 +69,7 @@ function LandingPage() {
               className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition hover:bg-gray-200 dark:bg-white/[0.05] dark:text-gray-300 dark:hover:bg-white/[0.1]"
               aria-label="Close popup"
             >
-              ✕
+              X
             </button>
             <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.18em] text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300">
               Flagship Product

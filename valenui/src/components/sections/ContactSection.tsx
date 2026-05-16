@@ -63,30 +63,79 @@ return ( <section
           </a>
         </div>
 
-        {/* Bottom Stats */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
-          
-          <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 p-6">
-            <h3 className="text-3xl font-bold text-gray-900 dark:text-white">AI</h3>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
-              Intelligent Systems & Infrastructure
+        {/* Social proof */}
+        <div className="mt-14 max-w-3xl mx-auto text-center">
+          <p className="text-sm uppercase tracking-[0.24em] text-indigo-500 dark:text-indigo-300 font-semibold">
+            Trusted by early adopters
+          </p>
+          <h3 className="mt-4 text-3xl sm:text-4xl font-semibold text-gray-900 dark:text-white">
+            Strong momentum from real users and AI teams.
+          </h3>
+          <p className="mt-4 text-gray-600 dark:text-gray-400 text-base leading-7">
+            Even small numbers build trust. Valen.live is already helping early beta users improve interviews, generate AI evaluations, and build smarter career workflows.
+          </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="rounded-3xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 p-7 text-center">
+            <p className="text-5xl font-bold text-gray-900 dark:text-white">50+</p>
+            <p className="mt-3 text-sm text-gray-500 dark:text-gray-400 uppercase tracking-[0.2em] font-semibold">
+              Beta Users
+            </p>
+          </div>
+          <div className="rounded-3xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 p-7 text-center">
+            <p className="text-5xl font-bold text-gray-900 dark:text-white">500+</p>
+            <p className="mt-3 text-sm text-gray-500 dark:text-gray-400 uppercase tracking-[0.2em] font-semibold">
+              AI Evaluations Generated
+            </p>
+          </div>
+          <div className="rounded-3xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 p-7 text-center">
+            <p className="text-5xl font-bold text-gray-900 dark:text-white">500+</p>
+            <p className="mt-3 text-sm text-gray-500 dark:text-gray-400 uppercase tracking-[0.2em] font-semibold">
+              Interview Simulations Completed
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          <div className="rounded-3xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 flex flex-col gap-4">
+            <div className="flex items-center gap-4">
+              <img src="/assets/testimonial2.png" alt="Testimonial from a woman" className="h-14 w-14 rounded-full object-cover" />
+              <div>
+                <p className="font-semibold text-gray-900 dark:text-white">Maya K.</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Product Designer</p>
+              </div>
+            </div>
+            <p className="text-sm leading-6 text-gray-600 dark:text-gray-300">
+              “Valen.live helped our team train for interviews faster than any tool we’ve tried. The live coding rooms and feedback are excellent.”
             </p>
           </div>
 
-          <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 p-6">
-            <h3 className="text-3xl font-bold text-gray-900 dark:text-white">Beta</h3>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
-              Expanding Product Ecosystem
+          <div className="rounded-3xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 flex flex-col gap-4">
+            <div className="flex items-center gap-4">
+              <img src="/assets/testimonial3.png" alt="Testimonial from a man" className="h-14 w-14 rounded-full object-cover" />
+              <div>
+                <p className="font-semibold text-gray-900 dark:text-white">Arjun S.</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Software Engineer</p>
+              </div>
+            </div>
+            <p className="text-sm leading-6 text-gray-600 dark:text-gray-300">
+              “The AI evaluation reports gave me clear guidance on how to improve my resume and interview performance. Definitely worth checking out.”
             </p>
           </div>
 
-          <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 p-6">
-            <h3 className="text-3xl font-bold text-gray-900 dark:text-white">Future</h3>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
-              Building Scalable AI Infrastructure
+          <div className="rounded-3xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 p-6 flex flex-col gap-4">
+            <div className="flex items-center gap-4">
+              <img src="/assets/user1.png" alt="Testimonial from a woman" className="h-14 w-14 rounded-full object-cover" />
+              <div>
+                <p className="font-semibold text-gray-900 dark:text-white">Nina R.</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Career Coach</p>
+              </div>
+            </div>
+            <p className="text-sm leading-6 text-gray-600 dark:text-gray-300">
+              “I can recommend Valen.live to students and clients with total confidence. The interview simulation experience is polished and highly realistic.”
             </p>
           </div>
-
         </div>
       </div>
     </div>

@@ -4,7 +4,6 @@ type StatusType = 'active' | 'beta' | 'institutional' | 'dev' | 'research';
 
 interface Product {
   id: string;
-  icon: string;
   tag: string;
   title: string;
   status: StatusType;
@@ -27,7 +26,6 @@ const STATUS_STYLES: Record<StatusType, string> = {
 const PRODUCTS: Product[] = [
   {
     id: 'valen-live',
-    icon: '⚡',
     tag: 'Flagship Platform',
     title: 'Valen.live',
     status: 'active',
@@ -46,7 +44,6 @@ const PRODUCTS: Product[] = [
   },
   {
     id: 'timetable',
-    icon: '📅',
     tag: 'Institutional Platform',
     title: 'Timetable Automation System',
     status: 'institutional',
@@ -64,7 +61,6 @@ const PRODUCTS: Product[] = [
   },
   {
     id: 'resume',
-    icon: '📄',
     tag: 'AI Infrastructure',
     title: 'Resume Intelligence',
     status: 'beta',
@@ -82,7 +78,6 @@ const PRODUCTS: Product[] = [
   },
   {
     id: 'code-arena',
-    icon: '💻',
     tag: 'In Development',
     title: 'Code Arena',
     status: 'dev',
@@ -100,7 +95,6 @@ const PRODUCTS: Product[] = [
   },
   {
     id: 'gen-ai',
-    icon: '🎬',
     tag: 'Research Division',
     title: 'Generative AI Studio',
     status: 'research',
@@ -159,9 +153,7 @@ function ProductCard({ product, delay }: { product: Product; delay: number }) {
     >
       {/* Top row */}
       <div className="flex items-start justify-between gap-3 mb-5">
-        <div className="w-10 h-10 rounded-[10px] bg-indigo-50 dark:bg-indigo-500/[0.08] flex items-center justify-center text-[18px] flex-shrink-0">
-          {product.icon}
-        </div>
+        <div className="w-10 h-10 rounded-[10px] bg-gradient-to-br from-indigo-100 to-violet-100 dark:from-indigo-500/10 dark:to-violet-500/10 flex-shrink-0" />
         <span className={`
           text-[10.5px] font-medium tracking-[0.06em] uppercase
           px-2.5 py-1 rounded-full font-mono flex-shrink-0
