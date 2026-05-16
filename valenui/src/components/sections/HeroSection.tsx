@@ -3,13 +3,20 @@ export function HeroSection() {
     document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-center px-6 pt-[120px] pb-20">
+    <section
+      className="relative flex items-center justify-center text-center px-6 pb-20 min-h-[calc(100vh-72px)] pt-[92px] sm:pt-[120px]"
+    >
 
       {/* Gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/3 left-1/3 w-[480px] h-[480px] bg-indigo-500/10 dark:bg-indigo-500/[0.07] rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-[360px] h-[360px] bg-violet-500/10 dark:bg-violet-500/[0.07] rounded-full blur-3xl" />
+        <div
+          className="absolute top-1/3 left-1/3 w-[320px] h-[320px] sm:w-[480px] sm:h-[480px] bg-indigo-500/10 dark:bg-indigo-500/[0.07] rounded-full blur-3xl"
+        />
+        <div
+          className="absolute bottom-1/4 right-1/4 w-[240px] h-[240px] sm:w-[360px] sm:h-[360px] bg-violet-500/10 dark:bg-violet-500/[0.07] rounded-full blur-3xl"
+        />
       </div>
+
 
       <div className="relative z-10 max-w-[840px] mx-auto">
 
