@@ -1,7 +1,11 @@
 # TODO
 
-- [x] Replace inline SVG navbar logo in `src/components/ui/Navbar.tsx` with the actual logo from `public/assets/Valen Labs Logo.png`.
-- [x] Verify navbar renders correctly (run dev/build).
-
-
+## Navbar upgrade
+- [ ] Update `valenui/src/components/ui/Navbar.tsx`:
+  - [ ] Add active-section detection on scroll (based on section in-view)
+  - [ ] Restyle desktop links into premium pill/tabs
+  - [ ] Improve scrolled navbar background (gradient, blur, shadow)
+  - [ ] Refine mobile dropdown (“sheet” look) + hover states
+  - [ ] Ensure mobile menu closes on navigation
+- [ ] Run the app build/dev check (lint/typescript) and confirm no console errors
 

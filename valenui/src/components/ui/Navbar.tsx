@@ -1,10 +1,23 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useTheme } from '../../context/ThemeContext';
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeHref, setActiveHref] = useState('#about');
   const { isDark, toggleTheme } = useTheme();
+
+  const navLinks = useMemo(
+    () => [
+      { label: 'About', href: '#about' },
+      { label: 'Products', href: '#products' },
+      { label: 'Ecosystem', href: '#ecosystem' },
+      { label: 'Vision', href: '#vision' },
+      { label: 'Beta', href: '#beta' },
+      { label: 'Contact', href: '#contact' },
+    ],
+    [],
+  );
 
 
 
@@ -12,18 +25,52 @@ export function Navbar() {
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 12);
+
     window.addEventListener('scroll', handler, { passive: true });
     return () => window.removeEventListener('scroll', handler);
   }, []);
 
-  const navLinks = [
-    { label: 'About',     href: '#about'     },
-    { label: 'Products',  href: '#products'  },
-    { label: 'Ecosystem', href: '#ecosystem' },
-    { label: 'Vision',    href: '#vision'    },
-    { label: 'Beta',      href: '#beta'      },
-    { label: 'Contact',   href: '#contact'   },
-  ];
+  useEffect(() => {
+    const sectionIds = navLinks.map(l => l.href);
+
+    const computeActive = () => {
+      // If we're at the very top, force 'about'
+      if (window.scrollY < 40) {
+        setActiveHref('#about');
+        return;
+      }
+
+      const viewportMid = window.scrollY + window.innerHeight * 0.35;
+
+      let best: { href: string; dist: number } | null = null;
+      for (const href of sectionIds) {
+        const el = document.querySelector(href) as HTMLElement | null;
+        if (!el) continue;
+
+        const rect = el.getBoundingClientRect();
+        const top = window.scrollY + rect.top;
+        const dist = Math.abs(top - viewportMid);
+
+        if (!best || dist < best.dist) {
+          best = { href, dist };
+        }
+      }
+
+      if (best) setActiveHref(best.href);
+    };
+
+    computeActive();
+    window.addEventListener('scroll', computeActive, { passive: true });
+    window.addEventListener('resize', computeActive);
+    return () => {
+      window.removeEventListener('scroll', computeActive);
+      window.removeEventListener('resize', computeActive);
+    };
+  }, []);
+
+
+
+
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
@@ -37,11 +84,12 @@ export function Navbar() {
           fixed top-0 left-0 right-0 z-50
           transition-all duration-300
           ${scrolled
-            ? 'border-b border-gray-200 dark:border-white/[0.07] bg-[rgba(255,255,255,0.95)] dark:bg-[rgba(10,10,9,0.88)] backdrop-blur-xl shadow-sm'
+            ? 'border-b border-gray-200/60 dark:border-white/[0.09] bg-white/75 dark:bg-[rgba(10,10,9,0.72)] backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.06)]'
             : 'bg-transparent border-b border-transparent'}
         `}
       >
-        <div className="max-w-[1200px] mx-auto px-6 h-[60px] flex items-center gap-0">
+        <div className="max-w-[1200px] mx-auto px-8 h-[72px] flex items-center gap-0">
+
 
           {/* Logo — left */}
           <a
@@ -54,9 +102,10 @@ export function Navbar() {
               alt="Valen Labs"
               className="w-7 h-7 rounded-[7px] object-contain"
             />
-            <span className="font-semibold text-[15px] tracking-[-0.02em] text-gray-900 dark:text-gray-100">
+            <span className="font-semibold text-[16.5px] tracking-[-0.02em] text-gray-900 dark:text-gray-100">
               Valen Labs
             </span>
+
           </a>
 
           {/* Center nav — desktop */}
@@ -65,14 +114,24 @@ export function Navbar() {
               <button
                 key={link.label}
                 onClick={() => handleNavClick(link.href)}
-                className="
-                  text-[13.5px] font-normal text-gray-600 dark:text-gray-400
-                  px-3.5 py-1.5 rounded-lg
-                  hover:text-gray-900 dark:hover:text-gray-100
-                  hover:bg-gray-100 dark:hover:bg-white/[0.06]
+                className={
+                  `
+                  text-[15px] font-medium
+                  px-4 py-2 rounded-xl
+
                   transition-all duration-150 cursor-pointer
-                  border-none bg-transparent
-                "
+                  border
+                  border-transparent
+                  bg-transparent
+                  hover:bg-gray-100/80 dark:hover:bg-white/[0.07]
+                  hover:border-gray-200/80 dark:hover:border-white/[0.10]
+                  hover:text-gray-900 dark:hover:text-gray-100
+                  ${activeHref === link.href
+                    ? 'bg-gray-100/80 dark:bg-white/[0.08] border-gray-200/80 dark:border-white/[0.12] text-gray-900 dark:text-gray-100 shadow-[0_8px_24px_rgba(0,0,0,0.06)]'
+                    : 'text-gray-600 dark:text-gray-400'
+                  }
+                `
+                }
               >
                 {link.label}
               </button>
@@ -144,14 +203,24 @@ export function Navbar() {
               <button
                 key={link.label}
                 onClick={() => handleNavClick(link.href)}
-                className="
-                  text-left text-[14px] text-gray-600 dark:text-gray-400
-                  px-3 py-2.5 rounded-lg
-                  hover:bg-gray-50 dark:hover:bg-white/[0.05]
-                  hover:text-gray-900 dark:hover:text-gray-100
+                className={
+                  `
+                  text-left text-[15px] font-medium
+                  px-4 py-3 rounded-xl
+
                   transition-all duration-150 cursor-pointer
-                  border-none bg-transparent w-full
-                "
+                  border
+                  border-transparent
+                  bg-transparent
+                  hover:bg-gray-50 dark:hover:bg-white/[0.05]
+                  hover:border-gray-200/80 dark:hover:border-white/[0.10]
+                  hover:text-gray-900 dark:hover:text-gray-100
+                  ${activeHref === link.href
+                    ? 'bg-gray-50 dark:bg-white/[0.07] border-gray-200/80 dark:border-white/[0.12]'
+                    : 'text-gray-600 dark:text-gray-400'
+                  }
+                `
+                }
               >
                 {link.label}
               </button>
