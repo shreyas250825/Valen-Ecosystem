@@ -4,7 +4,7 @@ import { useTheme } from '../../context/ThemeContext';
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeHref, setActiveHref] = useState('#about');
+  const [activeHref, setActiveHref] = useState('');
   const { isDark, toggleTheme } = useTheme();
 
   const navLinks = useMemo(
@@ -34,12 +34,6 @@ export function Navbar() {
     const sectionIds = navLinks.map(l => l.href);
 
     const computeActive = () => {
-      // If we're at the very top, force 'about'
-      if (window.scrollY < 40) {
-        setActiveHref('#about');
-        return;
-      }
-
       const viewportMid = window.scrollY + window.innerHeight * 0.35;
 
       let best: { href: string; dist: number } | null = null;
@@ -56,7 +50,14 @@ export function Navbar() {
         }
       }
 
-      if (best) setActiveHref(best.href);
+      // Only mark a section active if it's reasonably close to the viewport center.
+      if (best) {
+        const threshold = window.innerHeight * 0.45;
+        if (best.dist < threshold) setActiveHref(best.href);
+        else setActiveHref('');
+      } else {
+        setActiveHref('');
+      }
     };
 
     computeActive();
