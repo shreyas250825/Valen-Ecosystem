@@ -15,8 +15,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       if (storedTheme) {
         return storedTheme === 'dark';
       }
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      return prefersDark;
+      // Default to LIGHT on first load when no explicit user preference is stored.
+      return false;
     } catch {
       return false;
     }
