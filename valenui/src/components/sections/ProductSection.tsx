@@ -148,6 +148,7 @@ function ProductCard({ product, delay }: { product: Product; delay: number }) {
         hover:border-gray-300 dark:hover:border-white/[0.14]
         hover:-translate-y-0.5 hover:shadow-xl hover:shadow-indigo-500/[0.04]
         transition-all duration-300 cursor-default
+        ${product.id === 'valen-live' ? 'ring-1 ring-indigo-300/40 dark:ring-indigo-500/20 shadow-[0_30px_80px_rgba(99,102,241,0.14)]' : ''}
         ${product.wide ? 'md:col-span-2 max-w-xl mx-auto w-full' : ''}
       `}
       style={{

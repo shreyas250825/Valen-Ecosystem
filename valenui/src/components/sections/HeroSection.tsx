@@ -42,30 +42,31 @@ export function HeroSection() {
 
         {/* Sub */}
         <p className="text-[17px] font-light text-gray-500 dark:text-gray-400 max-w-[560px] mx-auto leading-[1.75] mb-11">
-          Valen Labs develops AI-powered platforms and intelligent infrastructure
-          focused on career intelligence, automation, productivity, and scalable
-          digital ecosystems.
+          Valen Labs develops AI-powered platforms and intelligent infrastructure,
+          led by Valen.live — our flagship product for career intelligence, live
+          coding, automation, and productivity.
         </p>
 
         {/* Buttons */}
         <div className="flex flex-wrap gap-3 justify-center mb-16">
-          <button
-            onClick={() => scrollTo('#products')}
+          <a
+            href="https://valen.live"
+            target="_blank"
+            rel="noopener noreferrer"
             className="
               px-6 py-[11px] rounded-[10px]
               bg-indigo-600 dark:bg-indigo-500
               text-white
               text-[14px] font-medium
               hover:opacity-80 hover:-translate-y-[1px]
-              transition-all duration-150 cursor-pointer border-none
+              transition-all duration-150
+              inline-flex items-center justify-center
             "
           >
-            Explore Ecosystem
-          </button>
-          <a
-            href="https://valen.live"
-            target="_blank"
-            rel="noopener noreferrer"
+            Try Valen.live for free
+          </a>
+          <button
+            onClick={() => scrollTo('#products')}
             className="
               px-6 py-[11px] rounded-[10px]
               border border-gray-300 dark:border-white/[0.12]
@@ -76,8 +77,8 @@ export function HeroSection() {
               transition-all duration-150
             "
           >
-            Visit Valen.live ↗
-          </a>
+            Explore Ecosystem
+          </button>
           <button
             onClick={() => scrollTo('#beta')}
             className="
