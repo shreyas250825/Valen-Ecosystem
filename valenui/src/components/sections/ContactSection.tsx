@@ -1,7 +1,7 @@
 export default function ContactSection() {
 return ( <section
    id="contact"
-   className="relative py-32 px-6 overflow-hidden bg-black text-white"
+   className="relative py-32 px-6 overflow-hidden bg-white text-gray-900"
  >
 {/* Background Effects */} <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.18),transparent_40%)]" /> <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(34,211,238,0.12),transparent_35%)]" />
 
@@ -10,7 +10,7 @@ return ( <section
   <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:60px_60px]" />
 
   <div className="max-w-6xl mx-auto relative z-10">
-    <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-white/5 backdrop-blur-2xl">
+    <div className="relative overflow-hidden rounded-[36px] border border-gray-200 bg-gray-50 backdrop-blur-2xl">
       
       {/* Glow Effects */}
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-500/20 blur-[140px]" />
@@ -33,13 +33,13 @@ return ( <section
         </h2>
 
         {/* Description */}
-        <p className="mt-8 text-zinc-400 text-lg max-w-3xl mx-auto leading-relaxed">
+        <p className="mt-8 text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
           Valen Labs is building scalable AI ecosystems focused on career
           intelligence, intelligent automation, productivity systems, and
           next-generation digital infrastructure.
         </p>
 
-        <p className="mt-4 text-zinc-500 max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-4 text-gray-500 max-w-2xl mx-auto leading-relaxed">
           We are continuously expanding our ecosystem through intelligent
           products, research initiatives, and scalable infrastructure
           platforms designed for the future.
@@ -57,7 +57,7 @@ return ( <section
 
           <a
             href="mailto:contact@valenlabs.in"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300 text-zinc-200"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl border border-gray-300 bg-white hover:bg-gray-50 transition-all duration-300 text-gray-900"
           >
             Contact Us
           </a>
@@ -66,23 +66,23 @@ return ( <section
         {/* Bottom Stats */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <h3 className="text-3xl font-bold text-white">AI</h3>
-            <p className="mt-2 text-zinc-400">
+          <div className="rounded-2xl border border-gray-200 bg-white p-6">
+            <h3 className="text-3xl font-bold text-gray-900">AI</h3>
+            <p className="mt-2 text-gray-600">
               Intelligent Systems & Infrastructure
             </p>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <h3 className="text-3xl font-bold text-white">Beta</h3>
-            <p className="mt-2 text-zinc-400">
+          <div className="rounded-2xl border border-gray-200 bg-white p-6">
+            <h3 className="text-3xl font-bold text-gray-900">Beta</h3>
+            <p className="mt-2 text-gray-600">
               Expanding Product Ecosystem
             </p>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <h3 className="text-3xl font-bold text-white">Future</h3>
-            <p className="mt-2 text-zinc-400">
+          <div className="rounded-2xl border border-gray-200 bg-white p-6">
+            <h3 className="text-3xl font-bold text-gray-900">Future</h3>
+            <p className="mt-2 text-gray-600">
               Building Scalable AI Infrastructure
             </p>
           </div>

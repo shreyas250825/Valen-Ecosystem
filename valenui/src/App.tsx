@@ -20,11 +20,11 @@ function GridBg() {
       className="fixed inset-0 pointer-events-none z-0"
       style={{
         backgroundImage: `
-          linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)
+          linear-gradient(rgba(200,200,200,0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(200,200,200,0.08) 1px, transparent 1px)
         `,
         backgroundSize: '64px 64px',
-        opacity: 0.5,
+        opacity: 0.3,
       }}
     />
   );
@@ -33,7 +33,7 @@ function GridBg() {
 /* ─── Landing page ───────────────────────────────────────────────────────── */
 function LandingPage() {
   return (
-    <div className="relative min-h-screen bg-white dark:bg-[#0a0a09] text-gray-900 dark:text-gray-100">
+    <div className="relative min-h-screen bg-white text-gray-900">
       <GridBg />
 
       <Navbar />

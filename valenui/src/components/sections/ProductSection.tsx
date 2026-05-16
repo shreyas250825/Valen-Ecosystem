@@ -17,11 +17,11 @@ interface Product {
 }
 
 const STATUS_STYLES: Record<StatusType, string> = {
-  active:      'bg-green-50 dark:bg-green-500/10 text-green-700 dark:text-green-400',
-  beta:        'bg-blue-50 dark:bg-blue-500/10 text-blue-700 dark:text-blue-400',
-  institutional:'bg-blue-50 dark:bg-blue-500/10 text-blue-700 dark:text-blue-400',
-  dev:         'bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400',
-  research:    'bg-purple-50 dark:bg-purple-500/10 text-purple-700 dark:text-purple-400',
+  active:      'bg-green-50 text-green-700',
+  beta:        'bg-blue-50 text-blue-700',
+  institutional:'bg-blue-50 text-blue-700',
+  dev:         'bg-amber-50 text-amber-700',
+  research:    'bg-purple-50 text-purple-700',
 };
 
 const PRODUCTS: Product[] = [
@@ -142,10 +142,10 @@ function ProductCard({ product, delay }: { product: Product; delay: number }) {
       ref={cardRef}
       className={`
         group flex flex-col
-        bg-white dark:bg-white/[0.03]
-        border border-gray-100 dark:border-white/[0.07]
+        bg-white
+        border border-gray-200
         rounded-2xl p-7
-        hover:border-gray-200 dark:hover:border-white/[0.14]
+        hover:border-gray-300
         hover:-translate-y-0.5 hover:shadow-xl hover:shadow-indigo-500/[0.04]
         transition-all duration-300 cursor-default
         ${product.wide ? 'md:col-span-2 max-w-xl mx-auto w-full' : ''}
@@ -158,7 +158,7 @@ function ProductCard({ product, delay }: { product: Product; delay: number }) {
     >
       {/* Top row */}
       <div className="flex items-start justify-between gap-3 mb-5">
-        <div className="w-10 h-10 rounded-[10px] bg-indigo-50 dark:bg-indigo-500/[0.08] flex items-center justify-center text-[18px] flex-shrink-0">
+        <div className="w-10 h-10 rounded-[10px] bg-indigo-50 flex items-center justify-center text-[18px] flex-shrink-0">
           {product.icon}
         </div>
         <span className={`
@@ -171,13 +171,13 @@ function ProductCard({ product, delay }: { product: Product; delay: number }) {
       </div>
 
       {/* Tag + Title */}
-      <div className="text-[11px] font-medium tracking-[0.04em] text-indigo-500 dark:text-indigo-400 mb-2 font-mono">
+      <div className="text-[11px] font-medium tracking-[0.04em] text-indigo-500 mb-2 font-mono">
         {product.tag}
       </div>
-      <h3 className="text-[18px] font-semibold tracking-[-0.02em] text-gray-900 dark:text-gray-100 mb-2.5">
+      <h3 className="text-[18px] font-semibold tracking-[-0.02em] text-gray-900 mb-2.5">
         {product.title}
       </h3>
-      <p className="text-[14px] font-light text-gray-500 dark:text-gray-400 leading-[1.65] mb-5">
+      <p className="text-[14px] font-light text-gray-500 leading-[1.65] mb-5">
         {product.description}
       </p>
 
@@ -187,8 +187,8 @@ function ProductCard({ product, delay }: { product: Product; delay: number }) {
           <li
             key={f}
             className="
-              flex items-center gap-2 text-[12.5px] text-gray-400 dark:text-gray-500
-              py-[5px] border-b border-gray-50 dark:border-white/[0.05] font-mono
+              flex items-center gap-2 text-[12.5px] text-gray-400
+              py-[5px] border-b border-gray-100 font-mono
               last:border-b-0
             "
           >
@@ -199,7 +199,7 @@ function ProductCard({ product, delay }: { product: Product; delay: number }) {
       </ul>
 
       {/* CTA */}
-      <div className="pt-4 border-t border-gray-50 dark:border-white/[0.05] mt-auto">
+      <div className="pt-4 border-t border-gray-100 mt-auto">
         {product.ctaHref ? (
           <a
             href={product.ctaHref}
@@ -207,7 +207,7 @@ function ProductCard({ product, delay }: { product: Product; delay: number }) {
             rel="noopener noreferrer"
             className="
               inline-flex items-center gap-1.5 text-[13px] font-medium
-              text-indigo-600 dark:text-indigo-400 no-underline
+              text-indigo-600 no-underline
               hover:opacity-70 transition-opacity duration-150
             "
           >
@@ -219,7 +219,7 @@ function ProductCard({ product, delay }: { product: Product; delay: number }) {
         ) : (
           <span className="
             inline-flex items-center gap-1.5 text-[13px] font-medium
-            text-indigo-600 dark:text-indigo-400
+            text-indigo-600
           ">
             {product.ctaLabel}
             <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -252,7 +252,7 @@ export function ProductSection() {
   }, []);
 
   return (
-    <section id="products" className="py-[120px] px-6 bg-gray-50 dark:bg-[#111110]">
+    <section id="products" className="py-[120px] px-6 bg-white">
       <div className="max-w-[1100px] mx-auto">
 
         {/* Header */}
@@ -263,15 +263,15 @@ export function ProductSection() {
         >
           <span className="
             inline-block text-[11px] font-medium tracking-[0.12em] uppercase
-            text-gray-400 border border-gray-200 dark:border-white/[0.1]
+            text-gray-400 border border-gray-200
             px-3 py-1 rounded-full font-mono mb-5
           ">
             02 — Product Ecosystem
           </span>
-          <h2 className="text-[clamp(28px,4vw,48px)] font-semibold tracking-[-0.03em] text-gray-900 dark:text-gray-50 leading-[1.1] mb-4">
+          <h2 className="text-[clamp(28px,4vw,48px)] font-semibold tracking-[-0.03em] text-gray-900 leading-[1.1] mb-4">
             Intelligent Platforms
           </h2>
-          <p className="text-[16px] font-light text-gray-500 dark:text-gray-400 max-w-[520px] mx-auto leading-[1.7]">
+          <p className="text-[16px] font-light text-gray-500 max-w-[520px] mx-auto leading-[1.7]">
             A growing ecosystem of AI-powered platforms and scalable infrastructure
             built for the future of intelligent work.
           </p>

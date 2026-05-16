@@ -7,7 +7,7 @@ export function FounderSection() {
   return (
     <section
 
-      className="py-28 px-6 bg-white dark:bg-black text-black dark:text-white transition-colors duration-500"
+      className="py-28 px-6 bg-white text-black transition-colors duration-500"
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-14 items-center">
@@ -22,12 +22,12 @@ export function FounderSection() {
               Shreyas Salian
             </h3>
 
-            <p className="mt-6 text-zinc-600 dark:text-zinc-400 leading-relaxed text-lg">
+            <p className="mt-6 text-gray-600 leading-relaxed text-lg">
               Shreyas Salian is the Founder & CEO of Valen Labs, focused on building
               scalable intelligent systems and AI-powered digital infrastructure.
             </p>
 
-            <p className="mt-4 text-zinc-600 dark:text-zinc-500 leading-relaxed">
+            <p className="mt-4 text-gray-600 leading-relaxed">
               His work focuses on combining artificial intelligence, automation,
               intelligent workflows, and system-driven product architecture to create
               practical platforms with long-term real-world impact.

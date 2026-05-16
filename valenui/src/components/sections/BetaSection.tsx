@@ -32,14 +32,14 @@ export function BetaSection({ onSubmit }: BetaSectionProps) {
   };
 
   return (
-    <section className="py-32 px-6 relative">
+    <section className="py-32 px-6 relative bg-white">
       {/* Background glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[600px] h-[600px] bg-primary-purple/10 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-3xl mx-auto text-center relative">
-        <div className="relative p-12 md:p-16 border border-gray-800 rounded-3xl bg-gradient-to-br from-gray-900/90 to-gray-900/50 backdrop-blur-sm overflow-hidden">
+        <div className="relative p-12 md:p-16 border border-gray-200 rounded-3xl bg-gray-50 backdrop-blur-sm overflow-hidden">
           
           {/* Decorative top border */}
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-purple to-transparent" />
@@ -54,7 +54,7 @@ export function BetaSection({ onSubmit }: BetaSectionProps) {
             </div>
 
             {/* Heading */}
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gray-900 leading-tight">
               Coding Arena
               <br />
               <span className="text-gradient">
@@ -63,9 +63,9 @@ export function BetaSection({ onSubmit }: BetaSectionProps) {
             </h2>
 
             {/* Subtitle */}
-            <p className="text-gray-400 mb-3 text-lg">
+            <p className="text-gray-600 mb-3 text-lg">
               Early beta access begins on{' '}
-              <span className="text-white font-medium">
+                  <span className="text-gray-900 font-medium">
                 May 25, 2026
               </span>
             </p>
@@ -84,9 +84,9 @@ export function BetaSection({ onSubmit }: BetaSectionProps) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className={`w-full px-6 py-4 bg-gray-900/50 border ${
-                    error ? 'border-red-500' : 'border-gray-700'
-                  } rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-primary-purple focus:ring-2 focus:ring-primary-purple/20 transition-all`}
+                  className={`w-full px-6 py-4 bg-white border ${
+                    error ? 'border-red-500' : 'border-gray-300'
+                  } rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-600/20 transition-all`}
                   aria-label="Email address"
                 />
               </div>

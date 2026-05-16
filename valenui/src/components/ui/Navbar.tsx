@@ -31,7 +31,7 @@ export function Navbar() {
           fixed top-0 left-0 right-0 z-50
           transition-all duration-300
           ${scrolled
-            ? 'border-b border-white/[0.07] dark:bg-[rgba(10,10,9,0.88)] bg-[rgba(250,250,249,0.88)] backdrop-blur-xl shadow-sm'
+            ? 'border-b border-gray-200 bg-[rgba(255,255,255,0.95)] backdrop-blur-xl shadow-sm'
             : 'bg-transparent border-b border-transparent'}
         `}
       >
@@ -48,7 +48,7 @@ export function Navbar() {
               alt="Valen Labs"
               className="w-7 h-7 rounded-[7px] object-contain"
             />
-            <span className="font-semibold text-[15px] tracking-[-0.02em] text-gray-900 dark:text-gray-100">
+            <span className="font-semibold text-[15px] tracking-[-0.02em] text-gray-900">
               Valen Labs
             </span>
           </a>
@@ -60,10 +60,10 @@ export function Navbar() {
                 key={link.label}
                 onClick={() => handleNavClick(link.href)}
                 className="
-                  text-[13.5px] font-normal text-gray-500 dark:text-gray-400
+                  text-[13.5px] font-normal text-gray-600
                   px-3.5 py-1.5 rounded-lg
-                  hover:text-gray-900 dark:hover:text-gray-100
-                  hover:bg-black/[0.05] dark:hover:bg-white/[0.06]
+                  hover:text-gray-900
+                  hover:bg-gray-100
                   transition-all duration-150 cursor-pointer
                   border-none bg-transparent
                 "
@@ -82,10 +82,10 @@ export function Navbar() {
               onClick={() => setMobileOpen(o => !o)}
               className="
                 md:hidden w-[34px] h-[34px] rounded-[8px]
-                border border-gray-200 dark:border-white/[0.1]
+                border border-gray-200
                 flex items-center justify-center
-                text-gray-500 dark:text-gray-400
-                hover:bg-gray-100 dark:hover:bg-white/[0.07]
+                text-gray-500
+                hover:bg-gray-100
                 transition-all duration-150 cursor-pointer bg-transparent
               "
             >
@@ -104,8 +104,8 @@ export function Navbar() {
         <div
           className={`
             md:hidden overflow-hidden transition-all duration-300
-            border-t border-gray-100 dark:border-white/[0.06]
-            bg-white/90 dark:bg-[#0a0a09]/90 backdrop-blur-xl
+            border-t border-gray-200
+            bg-white backdrop-blur-xl
             ${mobileOpen ? 'max-h-72 opacity-100' : 'max-h-0 opacity-0'}
           `}
         >
@@ -115,10 +115,10 @@ export function Navbar() {
                 key={link.label}
                 onClick={() => handleNavClick(link.href)}
                 className="
-                  text-left text-[14px] text-gray-600 dark:text-gray-400
+                  text-left text-[14px] text-gray-600
                   px-3 py-2.5 rounded-lg
-                  hover:bg-gray-50 dark:hover:bg-white/[0.05]
-                  hover:text-gray-900 dark:hover:text-gray-100
+                  hover:bg-gray-50
+                  hover:text-gray-900
                   transition-all duration-150 cursor-pointer
                   border-none bg-transparent w-full
                 "

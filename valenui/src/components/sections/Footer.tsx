@@ -63,7 +63,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="border-t border-gray-100 dark:border-white/[0.07] bg-gray-50 dark:bg-[#0d0d0c] pt-[60px] pb-10 px-6">
+    <footer className="border-t border-gray-200 bg-white pt-[60px] pb-10 px-6">
       <div className="max-w-[1100px] mx-auto">
 
         {/* Top grid */}
@@ -77,11 +77,11 @@ export function Footer() {
                   <path d="M8 1L14 4.5V11.5L8 15L2 11.5V4.5L8 1Z" />
                 </svg>
               </div>
-              <span className="font-semibold text-[15px] tracking-[-0.02em] text-gray-900 dark:text-gray-100">
+              <span className="font-semibold text-[15px] tracking-[-0.02em] text-gray-900">
                 Valen Labs
               </span>
             </div>
-            <p className="text-[14px] font-light text-gray-400 dark:text-gray-500 leading-[1.7] max-w-[220px]">
+            <p className="text-[14px] font-light text-gray-500 leading-[1.7] max-w-[220px]">
               Intelligent systems & AI infrastructure for the future of intelligent work.
             </p>
           </div>
@@ -89,7 +89,7 @@ export function Footer() {
           {/* Link columns */}
           {COLS.map(col => (
             <div key={col.heading}>
-              <h4 className="text-[11px] font-semibold tracking-[0.1em] uppercase text-gray-400 dark:text-gray-500 font-mono mb-4">
+              <h4 className="text-[11px] font-semibold tracking-[0.1em] uppercase text-gray-500 font-mono mb-4">
                 {col.heading}
               </h4>
               <ul className="space-y-2.5">
@@ -97,7 +97,7 @@ export function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-[14px] font-light text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-150 no-underline"
+                      className="text-[14px] font-light text-gray-600 hover:text-gray-900 transition-colors duration-150 no-underline"
                     >
                       {link.label}
                     </a>
@@ -109,8 +109,8 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-6 border-t border-gray-100 dark:border-white/[0.07] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[12.5px] text-gray-400 dark:text-gray-500 font-mono">
+        <div className="pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-[12.5px] text-gray-500 font-mono">
             © Valen Labs — Intelligent Systems & AI Infrastructure
           </p>
           <div className="flex items-center gap-4">
@@ -119,7 +119,7 @@ export function Footer() {
                 key={s.label}
                 href={s.href}
                 aria-label={s.label}
-                className="text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-150"
+                className="text-gray-500 hover:text-gray-900 transition-colors duration-150"
               >
                 {s.icon}
               </a>

@@ -1,8 +1,7 @@
 export function VisionSection() {
   return (
     <section
-
-      className="relative py-28 px-6 overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black text-white"
+      className="relative py-28 px-6 overflow-hidden bg-white text-gray-900"
     >
       <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.25),transparent_60%)]" />
 
@@ -20,13 +19,13 @@ export function VisionSection() {
             </span>
           </h2>
 
-          <p className="mt-8 text-zinc-400 text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-8 text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
             Valen Labs is focused on building scalable AI ecosystems that combine
             intelligent automation, productivity systems, career intelligence, and
             future-ready infrastructure into one connected digital environment.
           </p>
 
-          <p className="mt-6 text-zinc-500 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-gray-500 max-w-2xl mx-auto leading-relaxed">
             We believe the future belongs to integrated systems that augment human
             capability through practical AI, scalable architecture, and intelligent
             digital workflows.
