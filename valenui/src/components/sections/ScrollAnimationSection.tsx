@@ -60,12 +60,12 @@ export function ScrollAnimationSection() {
         >
           <span className="
             inline-block text-[11px] font-medium tracking-[0.12em] uppercase
-            text-gray-400 border border-gray-200
+            text-gray-400 border border-gray-200 dark:border-white/[0.1]
             px-3 py-1 rounded-full font-mono mb-5
           ">
             01 — About
           </span>
-          <h2 className="text-[clamp(28px,4vw,48px)] font-semibold tracking-[-0.03em] text-gray-900 leading-[1.1] mb-4">
+          <h2 className="text-[clamp(28px,4vw,48px)] font-semibold tracking-[-0.03em] text-gray-900 dark:text-gray-50 leading-[1.1] mb-4">
             An Intelligent<br />Systems Company
           </h2>
         </div>
@@ -76,17 +76,17 @@ export function ScrollAnimationSection() {
             className="fade-in-up"
             style={{ opacity: 0, transform: 'translateY(20px)', transition: 'opacity 0.6s 0.1s ease, transform 0.6s 0.1s ease' }}
           >
-            <p className="text-[16px] font-light text-gray-500 leading-[1.8] mb-4">
+            <p className="text-[16px] font-light text-gray-500 dark:text-gray-400 leading-[1.8] mb-4">
               Valen Labs is an emerging AI systems and intelligent infrastructure
               company focused on building scalable platforms across career intelligence,
               automation, productivity, and generative AI.
             </p>
-            <p className="text-[16px] font-light text-gray-500 leading-[1.8] mb-4">
+            <p className="text-[16px] font-light text-gray-500 dark:text-gray-400 leading-[1.8] mb-4">
               We believe the next generation of software is defined not by features,
               but by intelligence — systems that understand context, adapt in real-time,
               and augment human capability at scale.
             </p>
-            <p className="text-[16px] font-light text-gray-500 leading-[1.8]">
+            <p className="text-[16px] font-light text-gray-500 dark:text-gray-400 leading-[1.8]">
               Every product we build is part of a connected ecosystem — a unified
               infrastructure designed for the intelligent future of work.
             </p>
@@ -100,12 +100,12 @@ export function ScrollAnimationSection() {
               <div
                 key={l}
                 className="
-                  bg-white
-                  border border-gray-200
+                  bg-white dark:bg-white/[0.03]
+                  border border-gray-200 dark:border-white/[0.07]
                   rounded-xl p-5
                 "
               >
-                <div className="text-[28px] font-semibold tracking-[-0.03em] text-gray-900">
+                <div className="text-[28px] font-semibold tracking-[-0.03em] text-gray-900 dark:text-gray-100">
                   {n}
                 </div>
                 <div className="text-[12px] text-gray-400 mt-1 font-mono tracking-[0.02em]">
@@ -121,7 +121,7 @@ export function ScrollAnimationSection() {
           {PILLARS.map(({ icon, title, desc }, i) => (
             <div
               key={title}
-              className="fade-in-up bg-white border border-gray-200 rounded-xl p-5 hover:border-gray-300 transition-all duration-300"
+              className="fade-in-up bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.07] rounded-xl p-5 hover:border-gray-300 dark:hover:border-white/[0.12] transition-all duration-300"
               style={{
                 opacity: 0,
                 transform: 'translateY(20px)',
@@ -129,10 +129,10 @@ export function ScrollAnimationSection() {
               }}
             >
               <div className="text-2xl mb-3">{icon}</div>
-              <div className="text-[14px] font-semibold text-gray-900 mb-2 tracking-[-0.01em]">
+              <div className="text-[14px] font-semibold text-gray-900 dark:text-gray-100 mb-2 tracking-[-0.01em]">
                 {title}
               </div>
-              <div className="text-[13px] font-light text-gray-500 leading-[1.65]">
+              <div className="text-[13px] font-light text-gray-500 dark:text-gray-400 leading-[1.65]">
                 {desc}
               </div>
             </div>

@@ -16,7 +16,7 @@ const roadmap = [
 export function RoadmapSection() {
   return (
     <section
-      className="py-28 px-6 bg-white text-gray-900 overflow-hidden"
+      className="py-28 px-6 bg-white dark:bg-black text-gray-900 dark:text-white overflow-hidden"
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center">
@@ -32,7 +32,7 @@ export function RoadmapSection() {
             </span>
           </h2>
 
-          <p className="mt-6 text-gray-600 max-w-3xl mx-auto text-lg">
+          <p className="mt-6 text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-lg">
             The long-term vision of Valen Labs is to build scalable AI ecosystems that
             combine productivity, automation, career intelligence, and intelligent
             infrastructure into connected digital systems.
@@ -43,16 +43,16 @@ export function RoadmapSection() {
           {roadmap.map((phase) => (
             <div
               key={phase.phase}
-              className="relative rounded-3xl border border-gray-200 bg-white backdrop-blur-xl p-8"
+              className="relative rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/60 backdrop-blur-xl p-8"
             >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-indigo-500/5 to-violet-500/5 opacity-60" />
 
               <div className="relative z-10">
-                <h3 className="text-2xl font-semibold mb-6 text-gray-900">{phase.phase}</h3>
+                <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">{phase.phase}</h3>
 
                 <div className="space-y-4">
                   {phase.items.map((item) => (
-                    <div key={item} className="flex items-center gap-3 text-gray-700">
+                    <div key={item} className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
                       <div className="w-2 h-2 rounded-full bg-purple-400" />
                       <span>{item}</span>
                     </div>

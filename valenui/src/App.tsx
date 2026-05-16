@@ -33,7 +33,7 @@ function GridBg() {
 /* ─── Landing page ───────────────────────────────────────────────────────── */
 function LandingPage() {
   return (
-    <div className="relative min-h-screen bg-white text-gray-900">
+    <div className="relative min-h-screen bg-white dark:bg-[#0a0a09] text-gray-900 dark:text-gray-100">
       <GridBg />
 
       <Navbar />
