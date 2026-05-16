@@ -4,16 +4,16 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative flex items-center justify-center text-center px-6 pb-20 min-h-[calc(100vh-72px)] pt-[92px] sm:pt-[120px]"
+      className="relative flex items-center justify-center text-center px-4 sm:px-6 pb-20 min-h-[calc(100vh-72px)] pt-[92px] sm:pt-[120px]"
     >
 
       {/* Gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute top-1/3 left-1/3 w-[320px] h-[320px] sm:w-[480px] sm:h-[480px] bg-indigo-500/10 dark:bg-indigo-500/[0.07] rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/2 -translate-x-1/2 sm:top-1/3 sm:left-1/3 sm:-translate-x-0 w-[220px] h-[220px] sm:w-[480px] sm:h-[480px] bg-indigo-500/10 dark:bg-indigo-500/[0.07] rounded-full blur-3xl"
         />
         <div
-          className="absolute bottom-1/4 right-1/4 w-[240px] h-[240px] sm:w-[360px] sm:h-[360px] bg-violet-500/10 dark:bg-violet-500/[0.07] rounded-full blur-3xl"
+          className="absolute bottom-12 right-1/2 translate-x-1/2 sm:bottom-1/4 sm:right-1/4 sm:translate-x-0 w-[180px] h-[180px] sm:w-[360px] sm:h-[360px] bg-violet-500/10 dark:bg-violet-500/[0.07] rounded-full blur-3xl"
         />
       </div>
 
@@ -32,7 +32,7 @@ export function HeroSection() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-[clamp(42px,7.5vw,88px)] font-semibold tracking-[-0.04em] leading-[1.02] text-gray-900 dark:text-gray-50 mb-7">
+        <h1 className="text-[clamp(34px,7.5vw,88px)] font-semibold tracking-[-0.04em] leading-[1.02] text-gray-900 dark:text-gray-50 mb-7">
           Building Intelligent
           <br />
           <span className="bg-gradient-to-r from-indigo-500 via-violet-500 to-pink-500 bg-clip-text text-transparent">
@@ -96,22 +96,15 @@ export function HeroSection() {
 
         {/* Stats bar */}
         <div className="flex justify-center">
-          <div className="
-            inline-flex divide-x
-            divide-gray-200 dark:divide-white/[0.07]
-            border border-gray-200 dark:border-white/[0.07]
-            rounded-[14px] overflow-hidden
-            bg-white dark:bg-white/[0.03]
-            backdrop-blur-md
-          ">
+          <div className="inline-flex flex-wrap sm:divide-x divide-transparent divide-gray-200 dark:divide-white/[0.07] border border-gray-200 dark:border-white/[0.07] rounded-[14px] overflow-hidden bg-white dark:bg-white/[0.03] backdrop-blur-md">
             {[
               { n: '5+',      l: 'Platforms'     },
               { n: '<100ms',  l: 'Response'       },
               { n: '99.9%',   l: 'Accuracy'       },
               { n: '24 / 7',  l: 'Availability'   },
             ].map(({ n, l }) => (
-              <div key={l} className="px-7 py-5 text-center">
-                <div className="text-[22px] font-semibold tracking-[-0.03em] text-gray-900 dark:text-gray-100">
+              <div key={l} className="px-4 sm:px-7 py-4 sm:py-5 text-center">
+                <div className="text-[20px] sm:text-[22px] font-semibold tracking-[-0.03em] text-gray-900 dark:text-gray-100">
                   {n}
                 </div>
                 <div className="text-[11px] text-gray-500 dark:text-gray-500 mt-0.5 font-mono tracking-[0.02em]">
